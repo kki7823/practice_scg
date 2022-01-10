@@ -2,6 +2,8 @@ server:
   port: 8090
 ---
 spring:
+  application:
+    name: practice_scg
   cloud:
     gateway:
       default-filters:
@@ -41,3 +43,11 @@ spring:
                 baseMessage: Spring Cloud Gateway CafeFilter
                 preLogger: true
                 postLogger: true
+
+
+#Eureka client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://127.0.0.1:8787/eureka/}
+
